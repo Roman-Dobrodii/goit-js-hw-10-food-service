@@ -1,6 +1,6 @@
-import { checkbox, checkForSavedTheme, checkboxChangeHandler } from './js/theme';
-checkbox.addEventListener('change', checkboxChangeHandler);
-document.addEventListener('DOMContentLoaded', checkForSavedTheme);
+import { themeToggle, SaveTheme, checkboxHandler } from './js/theme';
+themeToggle.addEventListener('change', checkboxHandler);
+document.addEventListener('DOMContentLoaded', SaveTheme);
 
 import data from './js/menu.json';
 import menuItemsTmpl from './templates/menu-items.hbs';

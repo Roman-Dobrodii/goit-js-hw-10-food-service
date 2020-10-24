@@ -1,4 +1,4 @@
-export const checkbox = document.querySelector('#theme-switch-toggle');
+export const themeToggle = document.querySelector('#theme-switch-toggle');
 export const body = document.querySelector('body');
 
 const Theme = {
@@ -6,7 +6,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-export function checkForSavedTheme() {
+export function SaveTheme() {
     const savedTheme = localStorage.getItem('theme');
     if ((savedTheme === null) || (savedTheme === Theme.LIGHT)) {
         return
@@ -15,7 +15,7 @@ export function checkForSavedTheme() {
     }
 }
 
-export function checkboxChangeHandler(e) {
+export function checkboxHandler(e) {
     if (e.target.checked) {
         switchToDark();
     } else {
@@ -27,7 +27,7 @@ function switchToDark() {
     body.classList.remove(`${Theme.LIGHT}`);
     body.classList.add(`${Theme.DARK}`);
     localStorage.setItem('theme', Theme.DARK);
-    checkbox.checked = true;
+    themeToggle.checked = true;
 }
 function switchToLight() {
   body.classList.remove(`${Theme.DARK}`);
