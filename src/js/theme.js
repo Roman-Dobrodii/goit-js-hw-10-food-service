@@ -1,12 +1,12 @@
 export const themeToggle = document.querySelector('#theme-switch-toggle');
-export const body = document.querySelector('body');
+const body = document.querySelector('body');
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-export function SaveTheme() {
+export function saveTheme() {
     const savedTheme = localStorage.getItem('theme');
     if ((savedTheme === null) || (savedTheme === Theme.LIGHT)) {
         return
